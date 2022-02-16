@@ -1,1 +1,1 @@
-# AIandIPWebApp
+# Arteficial Intelligence and Intellectual Property
