@@ -1,0 +1,20 @@
+{% extends "_layout.html" %}
+{% block content %}
+<div class="container" style="text-align: center">
+    <h1>Welkom!</h1>
+    <p>
+        Dit is de welkomsttekst
+    </p>
+</div>
+<div class="container" style="display: flex; justify-content: center; padding: 30px">
+    <a href="{{ url_for('dataset') }}">
+        <button>Start</button>
+    </a>
+</div>
+<div class="container border" style="text-align: center">
+    <h4>Legal Disclaimer</h4>
+    <p>
+        Dit is de diclaimertekst
+    </p>
+</div>
+{% endblock %}
