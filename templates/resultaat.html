@@ -1,13 +1,44 @@
 {% extends "_layout.html" %}
 {% block content %}
 <a href="{{ url_for('afbeelding') }}">
-    <butten>
+    <button>
         Terug
-    </butten>
+    </button>
 </a>
 <a href="{{ url_for('eind') }}">
-    <butten>
+    <button>
         Verder
-    </butten>
-</a>
+    </button>
+</a><br /><br />
+
+<div class="container" style="padding: 10px">
+    <div class="row">
+        <div class="col-sm" style="max-width: 300px">
+            <img src="https://picsum.photos/250" alt="image placeholder">
+        </div>
+        <div class="col" style="min-width: 0px;">
+            <div class="row">
+                <div class="container border" style="max-height: 180px; overflow: auto;">
+                    <h1>Uitleg</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Erat imperdiet sed euismod nisi porta lorem mollis aliquam ut. Tempor id eu nisl nunc. Consectetur lorem donec massa sapien faucibus et. Malesuada fames ac turpis egestas sed tempus urna et. Iaculis urna id volutpat lacus laoreet non curabitur gravida arcu. Sit amet venenatis urna cursus. Nunc sed augue lacus viverra vitae congue eu consequat ac. Vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor. Magna ac placerat vestibulum lectus mauris ultrices eros in. Vitae sapien pellentesque habitant morbi tristique senectus et netus. Adipiscing tristique risus nec feugiat. Sit amet dictum sit amet justo donec enim diam vulputate. Diam maecenas sed enim ut sem viverra aliquet eget. Pharetra vel turpis nunc eget lorem dolor sed. Mi in nulla posuere sollicitudin aliquam ultrices. Urna porttitor rhoncus dolor purus non. Dis parturient montes nascetur ridiculus mus. Malesuada fames ac turpis egestas integer eget aliquet nibh praesent.</p>
+                </div>
+            </div>
+            <div class="row">
+                Vergelijkbaarheid: ## &emsp;
+                <input type="range" min="1" max="100" value="75" class="slider">
+            </div>
+            <div class="row">
+                <div class="container" style="display: flex; justify-content: center; padding: 5px;">
+                    <a href="{{ url_for('eind') }}">
+                        <button>Finish</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="container border" style="min-height: 200px; overflow-y: scroll">
+Hier komen de andere resultaten
+</div>
 {% endblock %}
