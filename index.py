@@ -7,9 +7,26 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
+
 @app.route("/dataset")
 def dataset():
     return render_template("dataset.html")
+
+
+@app.route("/afbeelding")
+def afbeelding():
+    return render_template("afbeelding.html")
+
+
+@app.route("/resultaat")
+def resultaat():
+    return render_template("resultaat.html")
+
+
+@app.route("/eind")
+def eind():
+    return render_template("eind.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)

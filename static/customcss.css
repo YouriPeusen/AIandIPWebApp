@@ -1,0 +1,27 @@
+.help {
+  width: 40px;
+  margin: 0 auto;
+}
+
+.question {
+  cursor: pointer;
+}
+
+.popup {
+  width: 560px;
+  height: 0px;
+  text-align: left;
+  overflow: hidden;
+  position: relative;
+  background: #eee;
+  opacity: 0;
+  transition: 1s;
+  left: -260px;
+  top: 10px;
+  z-index: 2000;
+}
+
+.help:hover .popup {
+  opacity: 1;
+  height: 270px;
+}
