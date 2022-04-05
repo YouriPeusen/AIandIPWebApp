@@ -8,6 +8,11 @@ def index():
     return render_template("index.html")
 
 
+@app.route("/keuzeAI")
+def keuzeAI():
+    return render_template("keuzeAI.html")
+
+
 @app.route("/dataset")
 def dataset():
     return render_template("dataset.html")
