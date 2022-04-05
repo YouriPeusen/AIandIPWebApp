@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'AIandIP'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4A1A70C5853E4EFCB7532EBDE38C8F68 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F82E158B858945F3AAE6DEFA3BB232AD }}
