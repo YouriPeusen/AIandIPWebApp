@@ -11,16 +11,41 @@
     </button>
 </a><br /><br />
 
+<div>
+    <p>Nu gaat de AI leren om afbeeldingen te herkennen en te onderzoeken of ze op elkaar lijken. Deze AI, een siamees netwerk, leert in de volgende vier stappen:</p>
+    <ol>
+        <li>Verzamelen features</li>
+        <li>Afbeeldingen selecteren</li>
+        <li>Afbeeldingen vergelijken</li>
+        <li>Validatie</li>
+    </ol>
+    <p>Deze stappen zullen meerdere keren herhaald worden om het programma zo accuraat mogelijk te maken.</p>
+</div>
 
-
-<nav class="navbar fixed-bottom navbar-light bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#" style="width:100%">
-            <p>Progress</p>
-            <div class="progress">
-                <div id="ProgressBarID" class="progress-bar" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-        </a>
+<div>
+    <h4>Stap 1: Verzamel een set afbeeldingen</h4>
+    <div class="row">
+        <div class="col-sm" align="center">
+            <p>Positive sample</p>
+        </div>
+        <div class="col-sm" align="center">
+            <p>Anchor</p>
+        </div>
+        <div class="col-sm" align="center">
+            <p>Negative sample</p>
+        </div>
     </div>
-</nav>
+    <div class="row">
+        <div class="col-sm" align="center">
+            <img src="{{url_for('static', filename='VW_1.png')}}" alt="" width="150" height="150">
+        </div>
+        <div class="col-sm" align="center">
+            <img src="{{url_for('static', filename='VW_2.jpg')}}" alt="" width="150" height="150">
+        </div>
+        <div class="col-sm" align="center">
+            <img src="{{url_for('static', filename='UM_1.jpg')}}" alt="" width="150" height="150">
+        </div>
+    </div>
+    <p>Van tevoren is in de dataset voor elke afbeelding die geanalyseerd wordt (de anchor) een positive sample toegekend. Dat is een afbeelding die lijkt op de anchor, gedefinieerd door mensen. Vervolgens wordt een willekeurige andere afbeelding geselecteerd uit de dataset. Dit is de negative sample. Deze drie samen noemen we ook wel het ‘triplet’. Als het programma goed werkt, zal deze dus concluderen dat de overeenkomst met de positive sample groter is dan die met de negative sample.</p>
+</div>
 {% endblock %}
