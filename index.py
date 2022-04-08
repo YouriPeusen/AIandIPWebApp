@@ -25,12 +25,16 @@ def dataset():
 
 @app.route("/afbeelding")
 def afbeelding():
-    return render_template("afbeelding.html")
+    ImgList = ["img1.jpg", "img2.jpg", "img3.jpg", "img4.jpg"]
+
+    return render_template("afbeelding.html", imglist=ImgList)
 
 
 @app.route("/resultaat")
 def resultaat():
-    return render_template("resultaat.html")
+    ImgResultsList = ["img1.jpg", "img2.jpg", "img3.jpg", "img4.jpg"]
+
+    return render_template("resultaat.html", imgresultlist=ImgResultsList)
 
 
 @app.route("/eind")

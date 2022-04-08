@@ -40,6 +40,8 @@
 
 </div>
 <div class="container border" style="min-height: 200px; overflow-y: scroll">
-Hier komen de andere resultaten
+    {% for img in imgresultlist %}
+    <img src="https://picsum.photos/200" alt="image placeholder" style="margin:5px;">
+    {% endfor %}
 </div>
 {% endblock %}

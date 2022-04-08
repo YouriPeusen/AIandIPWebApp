@@ -13,15 +13,17 @@
 
 <div class="container">
     <div class="row">
-        <button>
+        <button disabled>
             Upload
         </button>
         ?
     </div>
     <div class="row">
         <div class="col-sm" style="margin: 5px;">
-            <div class="container border" style="min-height: 400px">
-                afbeelding selectie
+            <div class="container border" style="min-height: 400px; padding:10px;">
+                {% for img in imglist %}
+                <img src="https://picsum.photos/200" alt="image placeholder" style="margin:5px;">
+                {% endfor %}
             </div>
         </div>
         <div class="col-sm" style="margin: 5px;">
