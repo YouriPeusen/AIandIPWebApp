@@ -1,8 +1,7 @@
 {% extends "_layout.html" %}
 {% block content %}
-<h1>Afbeelding selectie</h1><br />
-
-<a href="{{ url_for('training') }}">
+<!--Snelle navigatiebuttons voor debugging-->
+<!--<a href="{{ url_for('training') }}">
     <button>
         Terug
     </button>
@@ -11,13 +10,16 @@
     <button>
         Verder
     </button>
-</a><br /><br />
+</a><br /><br />-->
 
+<h1>Afbeelding selectie</h1><br />
 <div class="container">
     <div class="row">
-        <button disabled>
-            Upload
-        </button>
+        <a href="{{ url_for('resultaat') }}">
+            <button>
+                Upload
+            </button>
+        </a>
         ?
     </div>
     <div class="row">
