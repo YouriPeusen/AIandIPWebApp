@@ -82,10 +82,11 @@
     <p>Als we niet genoeg epochs uitvoeren, zal het model nog niet goed begrijpen wat wel en niet op elkaar lijkt, dit noemen we dan ook underfitting. Als ontwerper van een AI is het jouw verantwoordelijkheid om te herkennen wanneer het model moet stoppen met leren. Als je resultaat niet goed genoeg is, heb je het te lang laten runnen of juist te kort? Misschien was je dataset wel te klein? Het is zelfs mogelijk dat je gewoon het verkeerde model gebruikt en dit het beste resultaat is dat je gaat krijgen.</p>
     <p>Kortom, het is onmogelijk om een perfecte AI te ontwerpen. Des te meer je traint, des te beter de AI wordt in het herkennen van een patroon. Maar des te gevoeliger het wordt voor data die het programma niet verwacht. Variance is de fout die ontstaat uit variaties in de dataset en bias is de fout die ontstaat uit patronen die de AI niet kan herkennen. De balans hiertussen vinden wordt de bias-variance tradeoff genoemd, omdat minder fouten van de ene soort zal zorgen voor meer fouten van de ander.</p>
 </div>
-
-<a href="{{ url_for('afbeelding') }}">
-    <button>
-        Verder
-    </button>
-</a>
+<div style="float:right">
+    <a href="{{ url_for('afbeelding') }}">
+        <button>
+            Verder
+        </button>
+    </a>
+</div>
 {% endblock %}
