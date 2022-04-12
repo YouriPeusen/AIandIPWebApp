@@ -67,7 +67,9 @@
     </div>
     <div class="row" style="min-height: 200px; overflow-y: scroll;">
         <div class="container border">
-
+            {% for img in datasetImages %}
+                <img src="{{url_for('static', filename='PreDefDatasets/Dataset1/Anchor/'+img)}}" alt="" style="margin:5px;" width="200" height="200">
+            {% endfor %}
         </div>
     </div>
 </div>

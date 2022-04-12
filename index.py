@@ -1,4 +1,6 @@
 from flask import Flask, render_template, url_for
+import os
+
 
 app = Flask(__name__)
 
@@ -19,7 +21,8 @@ def keuzeAI():
 @app.route("/dataset")
 def dataset():
     ProgressPosition = 3
-    return render_template("dataset.html", step=ProgressPosition)
+    datasetImages = os.listdir("static/PreDefDatasets/Dataset1/Anchor")
+    return render_template("dataset.html", step=ProgressPosition, datasetImages=datasetImages)
 
 
 @app.route("/training")
