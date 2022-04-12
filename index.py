@@ -5,41 +5,49 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    startpage = True
+    ProgressPosition = 1
+    return render_template("index.html", startpage=startpage, step=ProgressPosition)
 
 
 @app.route("/keuzeAI")
 def keuzeAI():
-    return render_template("keuzeAI.html")
-
-
-@app.route("/training")
-def training():
-    return render_template("training.html")
+    ProgressPosition = 2
+    return render_template("keuzeAI.html", step=ProgressPosition)
 
 
 @app.route("/dataset")
 def dataset():
-    return render_template("dataset.html")
+    ProgressPosition = 3
+    return render_template("dataset.html", step=ProgressPosition)
+
+
+@app.route("/training")
+def training():
+    ProgressPosition = 4
+    return render_template("training.html", step=ProgressPosition)
 
 
 @app.route("/afbeelding")
 def afbeelding():
+    ProgressPosition = 5
     ImgList = ["img1.jpg", "img2.jpg", "img3.jpg", "img4.jpg"]
 
-    return render_template("afbeelding.html", imglist=ImgList)
+    return render_template("afbeelding.html", step=ProgressPosition, imglist=ImgList)
 
 
 @app.route("/resultaat")
 def resultaat():
+    ProgressPosition = 6
     ImgResultsList = ["img1.jpg", "img2.jpg", "img3.jpg", "img4.jpg"]
 
-    return render_template("resultaat.html", imgresultlist=ImgResultsList)
+    return render_template("resultaat.html", step=ProgressPosition, imgresultlist=ImgResultsList)
 
 
 @app.route("/eind")
 def eind():
-    return render_template("eind.html")
+    ProgressPosition = 7
+    return render_template("eind.html", step=ProgressPosition)
 
 
 if __name__ == "__main__":

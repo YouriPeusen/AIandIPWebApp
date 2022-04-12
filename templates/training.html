@@ -39,13 +39,13 @@
     </div>
     <div class="row">
         <div class="col-sm" align="center">
-            <img src="{{url_for('static', filename='Training_1.png')}}" alt="" width="150" height="150">
+            <img src="{{url_for('static', filename='images/Training_1.png')}}" alt="" width="150" height="150">
         </div>
         <div class="col-sm" align="center">
-            <img src="{{url_for('static', filename='Training_2.jpg')}}" alt="" width="150" height="150">
+            <img src="{{url_for('static', filename='images/Training_2.jpg')}}" alt="" width="150" height="150">
         </div>
         <div class="col-sm" align="center">
-            <img src="{{url_for('static', filename='Training_3.jpg')}}" alt="" width="150" height="150">
+            <img src="{{url_for('static', filename='images/Training_3.jpg')}}" alt="" width="150" height="150">
         </div>
     </div>
     <p>Van tevoren is in de dataset voor elke afbeelding die geanalyseerd wordt (de anchor) een positive sample toegekend. Dat is een afbeelding die lijkt op de anchor, gedefinieerd door mensen. Vervolgens wordt een willekeurige andere afbeelding geselecteerd uit de dataset. Dit is de negative sample. Deze drie samen noemen we ook wel het ‘triplet’. Als het programma goed werkt, zal deze dus concluderen dat de overeenkomst met de positive sample groter is dan die met de negative sample.</p>
@@ -53,13 +53,13 @@
 
 <div>
     <h4>Stap 2: Verzamelen features</h4>
-    <img src="{{url_for('static', filename='Training_4.PNG')}}" alt="">
+    <img src="{{url_for('static', filename='images/Training_4.PNG')}}" alt="">
     <p>Op alle afbeeldingen in de dataset wordt een algoritme toegepast om eigenschappen te selecteren en uit te lichten. Dit wordt gedaan middels het embedding generator model. Hieruit volgt een lijst met features, genaamd het embedding model. Deze lijst staat los van de dataset.</p>
 </div>
 
 <div>
     <h4>Stap 3: Vergelijking tussen afbeeldingen</h4>
-    <img src="{{url_for('static', filename='Training_5.png')}}" alt="">
+    <img src="{{url_for('static', filename='images/Training_5.png')}}" alt="">
     <p>De drie geselecteerde afbeeldingen worden in een Convolutional Neural Network gevoerd. Dit is een machine die vergelijkbaar werkt met een brein. Links komen de inputs binnen, dan gaan er signalen naar de eerste hidden layer. Elk van deze nodes stuurt op basis van de input een signaal naar de volgende layer. Vervolgens worden de signalen in de output layer samengevoegd, waar deze een similarity (vergelijkbaarheid) waarde krijgen toegekend.</p>
     <p>Wij vertellen de AI dat de waarde voor de positive zo hoog mogelijk moet zijn, of in ieder geval hoger dan de negative. Aan de hand van de werkelijke resultaten gaat het netwerk zaken veranderen in de hidden layers. Dit houdt in dat als een ‘node’ (bolletje in de afbeelding) dezelfde input krijgt, deze naar één of meerdere nodes in de volgende laag een ander signaal geeft. Als mensen kunnen we niet zien wat hier precies gebeurt. Daarom beschouwen we de hidden layers als een black box. We weten de input en de output wel, maar wat er aan de binnenkant gebeurt is een mysterie.</p>
     <p>Door hier meerdere sets inputdata te geven, kan het model zich beter aanpassen en daarmee betere resultaten geven. Dit is waarom het belangrijk is dat een trainingsdataset groot genoeg is.</p>
@@ -67,7 +67,7 @@
 
 <div>
     <h4>Stap 4: Validatie</h4>
-    <img src="{{url_for('static', filename='Training_6.png')}}" alt="">
+    <img src="{{url_for('static', filename='images/Training_6.png')}}" alt="">
     <p>Terwijl het model getraind wordt, wordt het ook gevalideerd. Dit wil zeggen dat we gaan meten hoe goed de AI het doet met nieuwe gegevens die het niet eerder heeft gezien. Net als bij training worden dezelfde stappen doorlopen; Er wordt een triplet (drie afbeeldingen) geselecteerd, hiervan worden de features (eigenschappen) in het embedding model gezet en de similarity (vergelijkbaarheid) bepaald. Het grootte verschil is dat er geen veranderingen plaatsvinden aan de modellen. De features worden uit het embedding model verwijderd na de analyse en het Convolutional Neural Network wordt niet aangepast gebaseerd op de resultaten. We zullen er later op terugkomen waarom we dit doen.</p>
 </div>
 
@@ -79,7 +79,7 @@
 
 <div>
     <h4>Overfitting en underfitting</h4>
-    <img src="{{url_for('static', filename='Training_7.png')}}" alt="">
+    <img src="{{url_for('static', filename='images/Training_7.png')}}" alt="">
     <p>Op het eerste gezicht lijkt het logisch dat meer training zal zorgen voor een beter model, toch? Het probleem met té veel training is dat de modellen verbanden gaan zien die er niet zijn. In het embedding generator model worden uit een afbeelding features gehaald die geen betekenis hebben, maar zo universeel zijn dat elke afbeelding wel een aspect heeft dat erop lijkt. Hierdoor kan het CNN (Convolutional Neural Network) moeilijker nieuwe afbeeldingen van elkaar onderscheiden. Je model gaat dus steeds beter werken, maar alleen met de trainingsdata. Dit noemen we overfitting. Het model leert op dit punt niet meer hoe het in het algemeen afbeeldingen moet onderscheiden, maar hoe het specifiek deze afbeeldingen in de trainingsdata kan onderscheiden van elkaar. Om deze reden is het van groot belang dat je je validatieset goed in de gaten houdt als programmeur. Als je ziet dat de AI het significant beter doet met de trainingsdata dan met de validatieset, is dat een indicatie dat je AI last heeft van overfitting.</p>
     <p>Als we niet genoeg epochs uitvoeren, zal het model nog niet goed begrijpen wat wel en niet op elkaar lijkt, dit noemen we dan ook underfitting. Als ontwerper van een AI is het jouw verantwoordelijkheid om te herkennen wanneer het model moet stoppen met leren. Als je resultaat niet goed genoeg is, heb je het te lang laten runnen of juist te kort? Misschien was je dataset wel te klein? Het is zelfs mogelijk dat je gewoon het verkeerde model gebruikt en dit het beste resultaat is dat je gaat krijgen.</p>
     <p>Kortom, het is onmogelijk om een perfecte AI te ontwerpen. Des te meer je traint, des te beter de AI wordt in het herkennen van een patroon. Maar des te gevoeliger het wordt voor data die het programma niet verwacht. Variance is de fout die ontstaat uit variaties in de dataset en bias is de fout die ontstaat uit patronen die de AI niet kan herkennen. De balans hiertussen vinden wordt de bias-variance tradeoff genoemd, omdat minder fouten van de ene soort zal zorgen voor meer fouten van de ander.</p>
