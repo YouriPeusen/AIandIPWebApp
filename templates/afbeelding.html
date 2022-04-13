@@ -15,16 +15,18 @@
 <h1>Afbeelding selectie</h1><br />
 <div class="container">
     <div class="row">
-        <a href="{{ url_for('resultaat') }}">
-            <button disabled>
-                Upload
-            </button>
-        </a>
-        <span class="HelpButton">
-            ?
-        </span>
-        <div class="hide">
-            Helptekst
+        <div class="col-sm">
+            <a href="{{ url_for('resultaat') }}" style="margin-right: 2px;">
+                <button disabled>
+                    Upload
+                </button>
+            </a>
+            <span class="HelpButton">
+                ?
+            </span>
+            <div class="hide">
+                Helptekst
+            </div>
         </div>
     </div>
     <div class="row">
