@@ -11,6 +11,11 @@
         Verder
     </button>
 </a><br /><br />-->
+<script>
+    function popupFunction(){
+        alert("Aan een dataset zijn een aantal eisen verbonden. We raden aan om eerst de aangeboden datasets te gebruiken!");
+    }
+</script>
 
 <h1>Dataset selectie</h1><br />
 <div class="container" style="text-align: center; height: 100%">
@@ -58,14 +63,14 @@
 
             <div class="row" style="padding:5px;">
                 <div class="col-sm">
-                <button disabled>
+                <button onclick="popupFunction()">
                     Upload dataset
                 </button>
                     <span class="HelpButton">
                         ?
                     </span>
                     <div class="hide">
-                        helptekst
+                        Een
                     </div>
                 </div>
                 <div class="col-sm">
