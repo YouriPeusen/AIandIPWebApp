@@ -34,12 +34,12 @@ def training():
 @app.route("/afbeelding")
 def afbeelding():
     ProgressPosition = 5
-    ImgList = ["img1.jpg", "img2.jpg", "img3.jpg", "img4.jpg"]
+    ImgList = ["PreDefDatasets/Dataset1/Positive/Toyota 3.jpg", "PreDefDatasets/Dataset1/Positive/Toyota 5.jpg", "PreDefDatasets/Dataset1/Positive/Skoda 4.jpg", "images/UM-logo.jpg"]
 
     return render_template("afbeelding.html", step=ProgressPosition, imglist=ImgList)
 
 
-@app.route("/resultaat")
+@app.route("/resultaat", methods=["GET", "POST"])
 def resultaat():
     ProgressPosition = 6
     ImgResultsList = ["img1.jpg", "img2.jpg", "img3.jpg", "img4.jpg"]
