@@ -23,7 +23,12 @@
                             Dataset 1
                         </button>
                     </a>
-                    ?
+                    <span class="HelpButton">
+                        ?
+                    </span>
+                    <div class="hide">
+                        Helptekst
+                    </div>
                 </div>
                 <div class="col-sm">
                     <button disabled>
@@ -37,7 +42,12 @@
                     <button disabled>
                         Dataset 2
                     </button>
-                    ?
+                    <span class="HelpButton">
+                        ?
+                    </span>
+                    <div class="hide">
+                        Helptekst
+                    </div>
                 </div>
                 <div class="col-sm">
                     <button disabled>
@@ -51,7 +61,12 @@
                 <button disabled>
                     Upload dataset
                 </button>
-                    ?
+                    <span class="HelpButton">
+                        ?
+                    </span>
+                    <div class="hide">
+                        helptekst
+                    </div>
                 </div>
                 <div class="col-sm">
 
@@ -65,7 +80,7 @@
             </div>
         </div>
     </div>
-    <div class="row" style="min-height: 200px; overflow-y: scroll;">
+    <div class="row" style="min-height: 200px; max-height: 250px; overflow-y: scroll;">
         <div class="container border">
             {% for img in datasetImages %}
                 <img src="{{url_for('static', filename='PreDefDatasets/Dataset1/Anchor/'+img)}}" alt="" style="margin:5px;" width="200" height="200">
