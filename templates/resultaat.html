@@ -16,7 +16,7 @@
 <div class="container" style="padding: 10px">
     <div class="row">
         <div class="col-sm" style="max-width: 300px">
-            <img src="https://picsum.photos/250" alt="image placeholder">
+            <img src="{{url_for('static', filename=firstImage)}}" alt="" width="250" height="250">
         </div>
         <div class="col" style="min-width: 0px;">
             <div class="row">
@@ -43,7 +43,7 @@
 </div>
 <div class="container border" style="min-height: 200px; overflow-y: scroll">
     {% for img in imgresultlist %}
-    <img src="https://picsum.photos/200" alt="image placeholder" style="margin:5px;">
+        <img src="{{url_for('static', filename=img)}}" alt="" style="margin:5px;" width="200" height="200">
     {% endfor %}
 </div>
 {% endblock %}

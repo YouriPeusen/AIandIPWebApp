@@ -16,25 +16,25 @@
 <div class="container">
     <div class="row">
         <div class="col-sm">
-            <a href="{{ url_for('resultaat') }}" style="margin-right: 2px;">
-                <button disabled>
-                    Upload
-                </button>
-            </a>
-            <span class="HelpButton">
-                ?
-            </span>
-            <div class="hide">
-                Keuze voor eigen afbeelding
-            </div>
+            <form method="post">
+                <input type="file" name="UploadFile" accept="image/jpeg"><br/>
+                <input type="submit" name="UplImgSubmit" value="Afbeelding uploaden">
+                <span class="HelpButton">
+                    ?
+                </span>
+                <div class="hide">
+                    Keuze voor eigen afbeelding
+                </div>
+            </form>
         </div>
     </div>
     <div class="row">
         <div class="col-sm" style="margin: 5px;">
             <div class="container border" style="padding:10px; max-width: 450px;">
-                <form action="{{ url_for('resultaat') }}" method="post">
+                <form method="post">
                     {% for img in imglist %}
-                    <input type="image" src="{{url_for('static', filename=img)}}" alt="" style="margin:5px;" width="200" height="200">
+                    <input hidden type="file" name="UploadFile" accept="image/jpeg">
+                    <input type="image" name="{{img}}" value="ImgSubmit" src="{{url_for('static', filename=img)}}" alt="" style="margin:5px;" width="200" height="200">
                     {% endfor %}
                 </form>
             </div>

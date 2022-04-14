@@ -1,8 +1,9 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request, redirect, flash, session
 import os
 
 
 app = Flask(__name__)
+app.secret_key = "9lSvS9c%dza!v@sX!vhaY1T5evsNEw*eqIl5jRxGm*vp!^f0LbyLWLYFj97*XRswcI&GiuEFCFyUg^am27OHYA"
 
 
 @app.route("/")
@@ -31,21 +32,54 @@ def training():
     return render_template("training.html", step=ProgressPosition)
 
 
-@app.route("/afbeelding")
+@app.route("/afbeelding", methods=["GET", "POST"])
 def afbeelding():
     ProgressPosition = 5
     ImgList = ["PreDefDatasets/Dataset1/Positive/Toyota 3.jpg", "PreDefDatasets/Dataset1/Positive/Toyota 5.jpg", "PreDefDatasets/Dataset1/Positive/Skoda 4.jpg", "images/UM-logo.jpg"]
+    apiUrl= ""
 
-    return render_template("afbeelding.html", step=ProgressPosition, imglist=ImgList)
+    if request.method == "POST":
+
+        UploadImg = request.form["UploadFile"]
+        if not UploadImg:
+            FormData = request.form
+            i = 0
+            for x in FormData:
+                if(i > 0):
+                    img = x
+                i = i + 1
+            UploadImg = x[:-2]
+
+        JsonResult = '{"file": "'+UploadImg+'"}'
+        session["UploadImg"] = UploadImg
+        return redirect(url_for('resultaat'))
+    else:
+        return render_template("afbeelding.html", step=ProgressPosition, imglist=ImgList)
 
 
 @app.route("/resultaat", methods=["GET", "POST"])
 def resultaat():
     ProgressPosition = 6
-    ImgResultsList = ["img1.jpg", "img2.jpg", "img3.jpg", "img4.jpg"]
 
-    return render_template("resultaat.html", step=ProgressPosition, imgresultlist=ImgResultsList)
-
+    if "UploadImg" in session:
+        UploadImg = session["UploadImg"]
+        #getresults
+        JsonResult = {"Toyota 1.jpg": 0.944, "Volkswagen 1.jpg": 0.666, "Opel 1.jpg": 0.777}
+        sorted_values = sorted(JsonResult.values(), reverse=True)
+        sorted_results = {}
+        for i in sorted_values:
+            for k in JsonResult.keys():
+                if JsonResult[k] == i:
+                    sorted_results[k] = JsonResult[k]
+                    break
+        firstImage = next(iter(sorted_results))
+        firstImagePath = "PreDefDatasets/Dataset1/Anchor/"+firstImage
+        sortedresultslist = []
+        for i in sorted_results:
+            sortedresultslist.append("PreDefDatasets/Dataset1/Anchor/"+i)
+        return render_template("resultaat.html", step=ProgressPosition, imgresultlist=sortedresultslist, firstImage=firstImagePath)
+    else:
+        return redirect(url_for("afbeelding"))
 
 @app.route("/eind")
 def eind():
