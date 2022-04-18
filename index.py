@@ -41,17 +41,8 @@ def afbeelding():
     if request.method == "POST":
 
         UploadImg = request.form["UploadFile"]
-        if not UploadImg:
-            FormData = request.form
-            i = 0
-            for x in FormData:
-                if(i > 0):
-                    img = x
-                i = i + 1
-            UploadImg = x[:-2]
-
-        JsonResult = '{"file": "'+UploadImg+'"}'
         session["UploadImg"] = UploadImg
+
         return redirect(url_for('afbeeldingVerwerking'))
     else:
         return render_template("afbeelding.html", step=ProgressPosition, imglist=ImgList)

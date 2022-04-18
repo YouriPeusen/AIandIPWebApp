@@ -14,33 +14,30 @@
 
 <h1>AI testen</h1><br />
 <div class="container">
-    <div class="row">
-        <div class="col-sm">
-            <form method="post">
-                <input type="file" name="UploadFile" accept="image/jpeg"><br/>
-                <input type="submit" name="UplImgSubmit" value="Afbeelding uploaden">
-            </form>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm" style="margin: 5px;">
-            <div class="container border" style="padding:10px; max-width: 450px;">
-                <form method="post">
+    <form method="post">
+        <div class="row">
+            <div class="col-sm" style="margin: 5px;">
+                <div class="container" style="padding:10px;">
+                    <input type="file" name="UploadFile" accept="image/jpeg"><br/>
+                </div>
+                <div class="container border" style="padding:10px; max-width: 450px;">
                     {% for img in imglist %}
-                    <input hidden type="file" name="UploadFile" accept="image/jpeg">
                     <input type="image" name="{{img}}" value="ImgSubmit" src="{{url_for('static', filename=img)}}" alt="" style="margin:5px;" width="200" height="200">
                     {% endfor %}
-                </form>
+                </div>
+            </div>
+            <div class="col-sm" style="margin: 5px;">
+                <div class="container" style="padding:10px;">
+                    <input type="submit" name="UplImgSubmit" value="Afbeelding uploaden">
+                </div>
+                <div class="container border" style="min-height: 400px; overflow: auto;">
+                    <h1>
+                        Uitleg
+                    </h1>
+                    <p>Nu is het tijd om de AI te testen. Er kan uit de weergeven afbeeldingen gekozen worden of een eigen afbeelding van een logo geüploadet worden. De AI zal deze afbeelding met alle anchors uit de trainingsset vergelijken en een similarity score geven. Denk voordat je een afbeelding uploadt na over welk resultaat je verwacht. Zouden hier hoge of lage similarity scores uit moeten komen? Zal de similarity sterk verschillen of gelijk blijven bij verschillende afbeeldingen uit de trainingsset?</p>
+                </div>
             </div>
         </div>
-        <div class="col-sm" style="margin: 5px;">
-            <div class="container border" style="min-height: 400px; overflow: auto;">
-                <h1>
-                    Uitleg
-                </h1>
-                <p>Nu is het tijd om de AI te testen. Er kan uit de weergeven afbeeldingen gekozen worden of een eigen afbeelding van een logo geüploadet worden. De AI zal deze afbeelding met alle anchors uit de trainingsset vergelijken en een similarity score geven. Denk voordat je een afbeelding uploadt na over welk resultaat je verwacht. Zouden hier hoge of lage similarity scores uit moeten komen? Zal de similarity sterk verschillen of gelijk blijven bij verschillende afbeeldingen uit de trainingsset?</p>
-            </div>
-        </div>
-    </div>
+    </form>
 </div>
 {% endblock %}
