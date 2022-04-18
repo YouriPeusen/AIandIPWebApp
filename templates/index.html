@@ -2,16 +2,12 @@
 {% block content %}
 <div class="container" style="overflow: auto; text-align: center">
     <h1>Welkom!</h1>
-    <p>Dit programma is leermateriaal voor de studenten van de Universiteit Maastricht, Faculteit Rechten. In dit leermateriaal is een AI ontwikkeld die logos van merken kan herkennen en percentages als output geeft met welke andere logo’s deze overeenkomsten hebben.</p>
-    <p>Verder in het traject wordt alles verder uitgelegd en zal ook duidelijk worden hoe de AI werkt en welke keuzes deze maakt.</p>
+    <p>Dit programma is leermateriaal voor de studenten van de Universiteit Maastricht, Faculteit Rechten. Hiervoor is een AI ontwikkeld die logos van merken (visual marks) kan herkennen en vergelijken. Deze techniek wordt in het werkveld al gebruikt om te ondersteunen in het onderzoeken van inbreuk op Intellectual Property.</p>
+    <p>In dit programma worden de stappen in het ontwerpen en trainen van een AI aan de hand van dit voorbeeld doorlopen en uitgelegd om een beter beeld te geven van het gebruik en de sterke en zwakke punten van deze techniek.</p>
 </div>
 <div class="container" style="display: flex; justify-content: center; padding: 30px">
     <a href="{{ url_for('keuzeAI') }}">
         <button>Start</button>
     </a>
-</div>
-<div class="container border" style="overflow: auto; text-align: center">
-    <h4>Legal Disclaimer</h4>
-    <p></p>
 </div>
 {% endblock %}

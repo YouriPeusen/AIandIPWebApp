@@ -6,25 +6,19 @@
         Terug
     </button>
 </a>
-<a href="{{ url_for('resultaat') }}">
+<a href="{{ url_for('afbeeldingVerwerking') }}">
     <button>
         Verder
     </button>
 </a><br /><br />-->
 
-<h1>Afbeelding selectie</h1><br />
+<h1>AI testen</h1><br />
 <div class="container">
     <div class="row">
         <div class="col-sm">
             <form method="post">
                 <input type="file" name="UploadFile" accept="image/jpeg"><br/>
                 <input type="submit" name="UplImgSubmit" value="Afbeelding uploaden">
-                <span class="HelpButton">
-                    ?
-                </span>
-                <div class="hide">
-                    Keuze voor eigen afbeelding
-                </div>
             </form>
         </div>
     </div>
@@ -44,7 +38,7 @@
                 <h1>
                     Uitleg
                 </h1>
-                <p>In dit scherm is er de mogelijkheid om een afbeelding te uploaden. Deze afbeelding zal vergeleken worden met de afbeeldingen uit de dataset die geselecteerd is. Deze overeenkomsten worden in een procentuele score weergegeven met de similarity score (overeenkomsten tussen de afbeeldingen)</p>
+                <p>Nu is het tijd om de AI te testen. Er kan uit de weergeven afbeeldingen gekozen worden of een eigen afbeelding van een logo geüploadet worden. De AI zal deze afbeelding met alle anchors uit de trainingsset vergelijken en een similarity score geven. Denk voordat je een afbeelding uploadt na over welk resultaat je verwacht. Zouden hier hoge of lage similarity scores uit moeten komen? Zal de similarity sterk verschillen of gelijk blijven bij verschillende afbeeldingen uit de trainingsset?</p>
             </div>
         </div>
     </div>

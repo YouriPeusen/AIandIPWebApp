@@ -17,7 +17,7 @@
     }
 </script>
 
-<h1>Dataset selectie</h1><br />
+<h1>Selectie trainingsdata</h1><br />
 <div class="container" style="text-align: center; height: 100%">
     <div class="row" style="padding-bottom: 10px;">
         <div class="col-sm">
@@ -28,60 +28,23 @@
                             Dataset 1
                         </button>
                     </a>
-                    <span class="HelpButton">
-                        ?
-                    </span>
-                    <div class="hide">
-                        Keuze voor een kleine dataset
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <button disabled>
-                        View
-                    </button>
                 </div>
             </div>
 
-            <div class="row" style="padding:5px;">
-                <div class="col-sm">
-                    <button disabled>
-                        Dataset 2
-                    </button>
-                    <span class="HelpButton">
-                        ?
-                    </span>
-                    <div class="hide">
-                        Keuze voor een grote dataset
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <button disabled>
-                        View
-                    </button>
-                </div>
-            </div>
 
             <div class="row" style="padding:5px;">
                 <div class="col-sm">
-                <button onclick="popupFunction()">
-                    Upload dataset
-                </button>
-                    <span class="HelpButton">
-                        ?
-                    </span>
-                    <div class="hide">
-                        Keuze voor eigen dataset
-                    </div>
-                </div>
-                <div class="col-sm">
-
+                    <button onclick="popupFunction()">
+                        Upload dataset
+                    </button>
                 </div>
             </div>
         </div>
         <div class="col-sm">
             <div class="container border" style="overflow: auto; height: 200px">
                 <h1>Uitleg</h1>
-                <p>In dit scherm heeft u de keuze om een enkele datasets te selecteren, of zelf een dataset te gebruiken die u heeft opgesteld.  Door op de knoppen vieuw te drukken kan u de datasets inzien onder in het scherm. Hier zullen voorbeelden van de afbeeldingen uit de dataset komen te staan.</p>
+                <p>Nu is het tijd om de AI te trainen. In dit scherm heeft u de keuze om een dataset te selecteren waarmee de AI gaat trainen. Momenteel is er één set ingeladen over automerken. Door op de knop ‘view’ te klikken, krijgt u een preview van de dataset. Ook kan een eigen dataset ingeladen worden, echter zijn hier een aantal eisen aan. Deze eisen staan in het pop-up scherm als je probeert een set te uploaden. Het wordt gebruikers aangeraden om de eerste keer met de voorbereide set te werken.</p>
+                <p>Ook hier moeten er keuzes gemaakt worden die een impact zullen hebben op de kwaliteit van de AI. Er kan gekozen worden voor en grotere dataset met meer afbeeldingen. Dit kost meer tijd om voor te bereiden en te leren, maar zal resulteren in een betere AI. Minder data is makkelijker om mee te werken en geeft sneller een resultaat, maar dit zal ten koste gaan van de betrouwbaarheid van resultaten. De centrale vraag is hier: Wanneer heb ik genoeg data? Een set van 11.000 afbeeldingen zal mogelijk iets betrouwbaarder zijn dan een set met 10.000 afbeeldingen, maar er moeten wel 1.000 afbeeldingen verzameld en voorbereid worden en training zal minimaal 10% langer duren (dit kan een stuk meer zijn afhankelijk van het model).</p>
             </div>
         </div>
     </div>

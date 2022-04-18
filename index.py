@@ -52,14 +52,21 @@ def afbeelding():
 
         JsonResult = '{"file": "'+UploadImg+'"}'
         session["UploadImg"] = UploadImg
-        return redirect(url_for('resultaat'))
+        return redirect(url_for('afbeeldingVerwerking'))
     else:
         return render_template("afbeelding.html", step=ProgressPosition, imglist=ImgList)
 
 
+@app.route("/afbeeldingVerwerking")
+def afbeeldingVerwerking():
+    ProgressPosition = 6
+
+    return render_template("afbeeldingVerwerking.html", step=ProgressPosition)
+
+
 @app.route("/resultaat", methods=["GET", "POST"])
 def resultaat():
-    ProgressPosition = 6
+    ProgressPosition = 7
 
     if "UploadImg" in session:
         UploadImg = session["UploadImg"]
@@ -83,7 +90,7 @@ def resultaat():
 
 @app.route("/eind")
 def eind():
-    ProgressPosition = 7
+    ProgressPosition = 8
     return render_template("eind.html", step=ProgressPosition)
 
 

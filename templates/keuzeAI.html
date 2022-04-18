@@ -13,40 +13,18 @@
 </a><br /><br />-->
 
 <div class="container" style="overflow: auto; text-align: center">
-    <h1>Keuze AI-modellen</h1>
-    <p>AI is een hulptool die door de Jaren heen veel is ontwikkeld en verbeterd. Deze tool is de laatste Jaren niet alleen maar in de ICT-sector bruikbaar, maar ook in veel andere sectoren. Ai heeft verschillende taken, eentje is gespecialiseerd op het herkennen van handelsmerken, de andere is bijvoorbeeld gespecialiseerd in het ontwikkelen door computergestuurde tegenstander in een videospel.</p>
-    <p>Een AI kan zeer bruikbaar zijn buiten de ICT-sector, denk hierbij aan bepaalde zoekmachines. Deze gebruiken algoritmes die afbeeldingen kunnen herkennen. Een ander goed voorbeeld hiervan zijn de verschillende chatboxen op websites van bedrijven. (Chatten met iemand van Bol.com klantenservice)</p>
-    <p>Voor het project is de keuze gemaakt om het Siamese Neural Network te gebruiken als AI. Deze keuze is gemaakt omdat er sprake is van regressie. Regressie toont in deze vorm aan welke handelsmerken het meeste met elkaar overeenkomen. Deze sterkte in overeenkomsten zal worden uitgedrukt in een similarity score. Het Siamese Neural Network vergelijkt alleen afbeeldingen, het zal niet kijken naar teksten en/of klanken. De AI vergelijkt alleen de afbeelding met de verschillende kenmerken hierin.</p>
-    <p>Met deze tool willen we jullie achter de schermen laten zien hoe een AI functioneert en het ook wat toegankelijker maken voor de studenten.</p>
+    <h1>Het AI-model</h1>
+    <p>AI is een hulpmiddel dat in alle sectoren kan helpen om menselijk werk te verlichten. Dit kan op veel verschillende manieren; De AI die we zo gaan ontwerpen herkent handelsmerken, maar de technologie wordt ook gebruikt om bijvoorbeeld te schaken of om door Google om je het beste zoekresultaat te geven. Tegenwoordig hebben veel websites een chatbox waar je vragen kunt stellen. Hier zit ook vaak een AI achter.</p>
+    <p>Allereerst wordt gedefinieerd wat het doel van de AI is. In dit geval is het doel om te onderzoeken of een afbeelding sterk lijkt op een bestaand visual mark. Vervolgens moet de AI leren om dit te doen. Net als een mens leert een AI door te oefenen, daarom noemen we het ook Artificial Intelligence. Dat betekent dat we de AI-afbeeldingen gaan geven om te vergelijken met een merk. In eerste instantie is het puur gokwerk, maar naar mate de tijd vordert leert de AI verbanden herkennen en wordt het model hier langzaam beter in. Voordat we de AI kunnen trainen, moeten we eerst het model kiezen. Er zijn bestaande modellen of een programmeur kan ervoor kiezen om een AI volledig zelf te ontwerpen.</p>
+    <p>Voor dit project is gekozen voor een Siamese Neural Network. Hoe deze AI precies werkt, zal tijdens de training worden uitgelegd. Wat nu van belang is, is met welk soort AI we te maken hebben. Dit is een regression-based image recognition AI. Dit wil zeggen dat de AI-beelden gaat herkennen, geen letters of teksten, en deze gaat onderscheiden middels regressie. Hieronder een korte toelichting over wat regressie inhoudt.</p>
+    <p>Regressie staat tegenover classificatie. Classificatie houdt in dat een afbeelding een label toegekend krijgt. Denk aan: Is dit een kat of een hond? De AI heeft in dat geval twee keuzes: de afbeelding is een kat of de afbeelding is een hond. Bij regressie wordt gekeken naar de overeenkomst tussen verschillende afbeeldingen. De AI zegt dan niet: ‘Het is een kat.’ maar ‘Deze afbeelding komt het meest overeen met afbeelding 3 (kat).’ Het doel van AI in dit vakgebied is om mensen handvatten te bieden in de besluitvorming en niet om zelf al een oordeel te vellen, dus een regressiemodel past hier beter bij de behoefte van de gebruiker.</p>
 </div>
-<div class="row" style="text-align: center">
-    <div class="col">
-        <div class="row">
-            <div class="container" style="width:50%;">
-                Siamese neural network
-            </div>
-        </div>
-        <div class="row">
-            <div class="container" style="width:50%;">
-                <a href="{{ url_for('dataset') }}">
-                    <button>Siamese neural network</button>
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="row">
-            <div class="container" style="width:50%;">
-                Andere Artificial neural network
-            </div>
-        </div>
-        <div class="row">
-            <div class="container" style="width:50%;">
-                <a href="{{ url_for('index') }}">
-                    <button disabled>##</button>
-                </a>
-            </div>
-        </div>
-    </div>
+
+<div style="float:right">
+    <a href="{{ url_for('dataset') }}">
+        <button>
+            Verder
+        </button>
+    </a>
 </div>
 {% endblock %}

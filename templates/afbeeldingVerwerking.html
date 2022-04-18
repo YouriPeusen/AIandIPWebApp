@@ -1,0 +1,27 @@
+{% extends "_layout.html" %}
+{% block content %}
+<!--Snelle navigatiebuttons voor debugging-->
+<!--<a href="{{ url_for('afbeelding') }}">
+    <button>
+        Terug
+    </button>
+</a>
+<a href="{{ url_for('resultaat') }}">
+    <button>
+        Verder
+    </button>
+</a><br /><br />-->
+
+<div class="container" style="overflow: auto; text-align: center">
+    <h1>Het AI-model</h1>
+    <p>De AI gaat nu hetzelfde doen als in de training. Eerst worden de features verzameld en vervolgens wordt elke anchor in het CNN ingevoerd, maar in plaats van een positive en een negative, wordt de afbeelding die in het vorige scherm geselecteerd is op de plaats van de positive ingevoerd. Dit houdt in dat er op de plek van de negative geen input is. Dit maakt niet uit, want de similarity score voor de negative wordt toch niet gebruikt.</p>
+</div>
+
+<div style="float:right">
+    <a href="{{ url_for('resultaat') }}">
+        <button>
+            Verder
+        </button>
+    </a>
+</div>
+{% endblock %}
